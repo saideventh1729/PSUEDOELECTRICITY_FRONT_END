@@ -1,0 +1,29 @@
+<h2> Employee List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> ID</th>
+            <th> Amount</th>
+            <th>  Description</th>
+            <th> Bill Date </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let elecbill of elecbills" >
+            <td> {{ elecbill.electId }} </td>
+            <td> {{ elecbill.amount }} </td>
+            <td> {{ elecbill.description }} </td>
+            <td> {{ elecbill.billdate }} </td>
+
+            <td>
+                <button (click) = "updateelecbill(elecbill.electId)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteelecbill(elecbill.electId)" class = "btn btn-danger"  style="margin-left: 10px"> Delete</button>
+                <button (click) = "billdetails(elecbill.electId)" class = "btn btn-success"  style="margin-left: 10px"> View </button>
+           
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
